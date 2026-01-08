@@ -11,6 +11,10 @@ data "aws_subnets" "subnet_id" {
     name   = "vpc-id"
     values = [var.vpc_id]
   }
+  filter {
+    name   = "tag:Name"
+    values = ["pub*"]
+  }
 }
 
 
